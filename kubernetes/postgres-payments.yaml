@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: postgres-payments-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgres-payments
+    spec:
+      containers:
+        - image: centos/postgresql-94-centos7
+          name: postgres-payments
+          env:
+            - name: POSTGRESQL_USER
+              value: dbuser
+            - name: POSTGRESQL_PASSWORD
+              value: postgres
+            - name: POSTGRESQL_DATABASE
+              value: payment
+          ports:
+          - containerPort: 5432
+            protocol: TCP

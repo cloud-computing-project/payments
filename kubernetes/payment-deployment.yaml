@@ -1,0 +1,29 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: payment-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: payment
+    spec:
+      containers:
+      - image: bozen/payments:0.01
+        name: payments
+        env:
+          - name: KUMULUZEE_DISCOVERY_CLUSTER
+            value: bluemix
+          - name: KUMULUZEE_DISCOVERY_ETCD_HOSTS
+            value: http://etcd:2379
+          - name: KUMULUZEE_CONFIG_ETCD_HOSTS
+            value: http://etcd:2379
+          - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
+            value: jdbc:postgresql://postgres-payments:5432/payment
+          - name: KUMULUZEE_SERVER_BASEURL
+            value: http://169.51.20.134:32718
+        ports:
+        - containerPort: 8083
+          name: server
+          protocol: TCP
