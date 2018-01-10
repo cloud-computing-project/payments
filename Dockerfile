@@ -6,6 +6,6 @@ WORKDIR /app
 
 ADD ./api/target/payments-api-1.0.0-SNAPSHOT.jar /app
 
-EXPOSE 8083
+EXPOSE 8084
 
 CMD ["java", "-jar", "payments-api-1.0.0-SNAPSHOT.jar"]
