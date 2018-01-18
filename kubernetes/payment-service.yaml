@@ -8,8 +8,8 @@ spec:
   type: NodePort
   ports:
   - name: server
-    port: 8084
+    port: 8090
     protocol: TCP
-    targetPort: 8084
+    targetPort: 8090
   selector:
     app: payment

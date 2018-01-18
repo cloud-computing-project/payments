@@ -15,11 +15,8 @@ public class Payment {
         @GeneratedValue(generator = "idGenerator")
         private String id;
 
-        @Column(name = "product_id")
-        private String productId;
-
-        @Column(name = "sales_id")
-        private String salesId;
+        @Column(name = "order_id")
+        private String orderId;
 
         private String method;
 
@@ -52,20 +49,12 @@ public class Payment {
                 this.id = id;
         }
 
-        public String getProductId() {
-                return productId;
+        public String getOrderId() {
+                return orderId;
         }
 
-        public void setProductId(String productId) {
-                this.productId = productId;
-        }
-
-        public String getSalesId() {
-                return salesId;
-        }
-
-        public void setSalesId(String salesId) {
-                this.salesId = salesId;
+        public void setOrderId(String orderId) {
+                this.orderId = orderId;
         }
 
         public String getMethod() {

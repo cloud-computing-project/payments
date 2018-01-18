@@ -11,7 +11,7 @@ services:
   payments:
     image: bozen/payments
     ports:
-      - 8084:8084
+      - 8090:8090
     environment:
       KUMULUZEE_DATASOURCES0_CONNECTIONURL: jdbc:postgresql://postgres:5432/payment
     depends_on:

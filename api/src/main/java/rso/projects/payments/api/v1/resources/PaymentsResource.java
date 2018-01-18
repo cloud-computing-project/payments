@@ -50,7 +50,7 @@ public class PaymentsResource {
     @POST
     public Response createPayment(Payment payment) {
 
-        if (payment.getProductId() == null || payment.getProductId().isEmpty()) {
+        if (payment.getOrderId() == null || payment.getOrderId().isEmpty()) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         } else {
             payment = paymentsBean.createPayment(payment);
