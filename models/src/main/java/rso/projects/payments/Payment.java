@@ -2,6 +2,7 @@ package rso.projects.payments;
 import org.eclipse.persistence.annotations.UuidGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "payments")
 @NamedQueries(value =
@@ -24,6 +25,9 @@ public class Payment {
         private String immediatePayment;
 
         private String instructions;
+
+        @Transient
+        private List<Order> orders;
 
         public String getImmediatePayment() {
                 return immediatePayment;
@@ -63,5 +67,13 @@ public class Payment {
 
         public void setMethod(String method) {
                 this.method = method;
+        }
+
+        public List<Order> getOrders() {
+                return orders;
+        }
+
+        public void setOrders(List<Order> orders) {
+                this.orders = orders;
         }
 }

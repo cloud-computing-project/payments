@@ -10,7 +10,7 @@ spec:
         app: payment
     spec:
       containers:
-      - image: bozen/payments:0.02
+      - image: bozen/payments:0.03
         name: payments
         env:
           - name: KUMULUZEE_DISCOVERY_CLUSTER
@@ -22,7 +22,7 @@ spec:
           - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
             value: jdbc:postgresql://postgres-payments:5432/payment
           - name: KUMULUZEE_SERVER_BASEURL
-            value: http://169.51.20.134:30597
+            value: http://169.51.20.134:30863
         ports:
         - containerPort: 8090
           name: server

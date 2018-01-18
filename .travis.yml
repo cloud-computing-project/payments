@@ -14,7 +14,7 @@ cache:
   - $HOME/.m2
 
 env:
-  - DOCKER_IMAGE=bozen/payments:0.02
+  - DOCKER_IMAGE=bozen/payments:0.03
 
 script:
   - mvn clean package -U
